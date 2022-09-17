@@ -4,7 +4,7 @@
   "description": "api en node.js",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon server.js"
   },
   "author": "Nicolas Herbez",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
   }
 }
