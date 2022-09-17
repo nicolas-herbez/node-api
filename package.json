@@ -1,0 +1,17 @@
+{
+  "name": "celdelices-api",
+  "version": "1.0.0",
+  "description": "api en node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Nicolas Herbez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
