@@ -1,13 +1,18 @@
 {
+    "exclude": [
+        "./src/*.test.ts"
+    ],
     "compilerOptions": {
-        "outDir": "dist",
+        "outDir": "./dist",
         "target": "ESNext",
         "noEmitOnError": true,
-        "strict": true
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true
     },
     "files": [
-        "src/server.ts",
-        "src/helper.ts",
-        "src/config/ingredients.config.ts"
+        "./src/app.ts",
+        "./src/helper.ts",
+        "./src/config/ingredients.config.ts"
     ]
 }
