@@ -46,7 +46,7 @@ app.put('/api/ingredients/:id', (req: any,res: any) => {
 app.delete('/api/ingredients/:id', (req: any,res: any) => {
     const id: number = parseInt(req.params.id);
     const ingredientDeleted = ingredients.find((ingredient: any) => ingredient.id === id);
-    ingredients.filter((ingredient: any) => ingredient.id !== id);
+    ingredients = ingredients.filter((ingredient: any) => ingredient.id !== id);
     const message = `Ingrédient supprimé`;
     res.json(success(message, ingredientDeleted));
 });
