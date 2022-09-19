@@ -1,4 +1,3 @@
-const ingredients = require("./config/ingredients.config")
 
 exports.success = (message, data) => {
     return { message, data }

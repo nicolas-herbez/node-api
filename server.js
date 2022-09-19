@@ -14,14 +14,14 @@ app
 app.get('/', (req,res) => res.send('Hello world ! 🖐️'));
 
 app.get('/api/ingredients', (req,res) => {
-    const message = `ingrédients = ${ingredients.length}`;
+    const message = `Liste des ingrédients = ${ingredients.length}`;
     res.json(success(message, ingredients));
 });
 
-app.get('/api/ingredient/:id', (req,res) => {
+app.get('/api/ingredients/:id', (req,res) => {
     const id = parseInt(req.params.id);
     const ingredient = ingredients.find(ingredient => ingredient.id === id);
-    const message = "ingrédient";
+    const message = "Ingrédient";
     res.json(success(message, ingredient));
 });
 
@@ -29,8 +29,26 @@ app.post('/api/ingredients', (req,res) => {
     const id = getUniqueId(ingredients);
     const ingredientCreated = { ...{id: id}, ...req.body};
     ingredients.push(ingredientCreated);
-    const message = `Ingrédient ${ingredientCreated.name} créé`;
+    const message = `Ingrédient créé`;
     res.json(success(message, ingredientCreated));
+});
+
+app.put('/api/ingredients/:id', (req,res) => {
+    const id = parseInt(req.params.id);
+    const ingredientUpdated = { ...{id: id}, ...req.body};
+    ingredients = ingredients.map(ingredient => {
+        return ingredient.id === id ? ingredientUpdated : ingredient;
+    });
+    const message = `Ingrédient modifié`;
+    res.json(success(message, ingredientUpdated));
+});
+
+app.delete('/api/ingredients/:id', (req,res) => {
+    const id = parseInt(req.params.id);
+    const ingredientDeleted = ingredients.find(ingredient => ingredient.id === id);
+    ingredients.filter(ingredient => ingredient.id !== id);
+    const message = `Ingrédient supprimé`;
+    res.json(success(message, ingredientDeleted));
 });
 
 app.listen(port, () => console.log(`api listen on http://localhost:${port}`));
