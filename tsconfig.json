@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "ESNext",
+        "noEmitOnError": true,
+        "strict": true
+    },
+    "files": [
+        "src/server.ts",
+        "src/helper.ts",
+        "src/config/ingredients.config.ts"
+    ]
+}

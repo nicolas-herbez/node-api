@@ -1,4 +1,4 @@
-const ingredients = [
+const listOfIngredients = [
     {
         id: 1,
         name: "pomme",
@@ -42,4 +42,4 @@ const ingredients = [
     }
 ]
 
-module.exports = ingredients;
+module.exports = listOfIngredients;
