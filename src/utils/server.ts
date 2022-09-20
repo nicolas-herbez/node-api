@@ -3,10 +3,19 @@ import { Request, Response } from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import { success, getUniqueId } from './helper';
+import sequelize from './../config/sequelize';
 
 let ingredients = require('../config/ingredients.config');
 
 function createServer() {
+
+    try {
+        sequelize.authenticate();
+        console.log('=> Connection to bdd established');
+    } catch (error) {
+        console.error('=> Unable to connect to the database:', error);
+    }
+
     const app = express();
 
     app
