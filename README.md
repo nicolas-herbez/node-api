@@ -7,10 +7,10 @@
 - npm i
 
 ### run server
-- npm start
+- npm run start
 
 ### run typescript
-- npx tsc --watch
+- npm run build
 
 ### run tests
 - npm run test

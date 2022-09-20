@@ -1,18 +1,17 @@
 {
+    "include": [
+        "src/**/*"
+    ],
     "exclude": [
         "./src/*.test.ts"
     ],
     "compilerOptions": {
         "outDir": "./dist",
-        "target": "ESNext",
+        "target": "ES2022",
+        "module": "CommonJS",
         "noEmitOnError": true,
         "strict": true,
         "moduleResolution": "node",
         "esModuleInterop": true
-    },
-    "files": [
-        "./src/app.ts",
-        "./src/helper.ts",
-        "./src/config/ingredients.config.ts"
-    ]
+    }
 }
